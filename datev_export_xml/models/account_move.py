@@ -66,7 +66,7 @@ class AccountMove(models.Model):
             )
 
         if pickings:
-            return pickings.sorted("date DESC")[0].date.date()
+            return pickings.sorted("date", reverse=True)[0].date.date()
 
         _logger.info("Invoice date used as delivery date.")
         return self.invoice_date
