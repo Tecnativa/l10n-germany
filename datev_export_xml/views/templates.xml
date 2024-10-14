@@ -19,7 +19,6 @@
             />
         </t>
 
-        <booking_info_bp t-if="account" t-att-bp_account_no="account.code" />
     </template>
 
     <template id="export_invoice_line_item">
