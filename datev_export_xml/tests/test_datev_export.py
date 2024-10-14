@@ -344,11 +344,13 @@ class TestDatevExport(TransactionCase):
 
         if invoice.type.startswith("out_"):
             self.assertEqual(
-                invoice_party_address.attrib["name"], invoice.partner_id.display_name
+                invoice_party_address.attrib["name"],
+                invoice.partner_id.commercial_partner_id.display_name
             )
         else:
             self.assertEqual(
-                supplier_party_address.attrib["name"], invoice.partner_id.display_name
+                supplier_party_address.attrib["name"],
+                invoice.partner_id.commercial_partner_id.display_name
             )
 
         self.assertEqual(float(line["quantity"]), inv_line.quantity)
