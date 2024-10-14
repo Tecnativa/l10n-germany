@@ -114,7 +114,7 @@
                 t-att-payment_conditions_text="doc.invoice_payment_term_id.name"
             />
 
-            <t t-foreach="doc.invoice_line_ids" t-as="line">
+            <t t-foreach="doc.invoice_line_ids.filtered(lambda x: x.price_unit and not x.display_type)" t-as="line">
                 <t t-call="datev_export_xml.export_invoice_line" />
             </t>
 
