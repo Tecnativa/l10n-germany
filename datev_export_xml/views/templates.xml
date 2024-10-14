@@ -3,7 +3,7 @@
     <template id="export_party">
         <address
             t-att-name="(partner.commercial_partner_id.display_name or '')[:50]"
-            t-att-street="partner.street or ''"
+            t-att-street="(partner.street or '')[:41]"
             t-att-zip="partner.zip or ''"
             t-att-city="partner.city or ''"
             t-att-country="partner.country_id.code or ''"
